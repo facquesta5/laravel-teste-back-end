@@ -119,9 +119,10 @@ class UsuarioController extends Controller
     }
 
 
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         Usuario::find($id)->delete();
+        Endereco::find($request->endereco_id)->delete();
 
         return redirect()->route('usuarios.index');
     }

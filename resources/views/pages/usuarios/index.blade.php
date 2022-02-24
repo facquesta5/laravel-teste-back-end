@@ -63,6 +63,7 @@
                         <form action="{{route('usuarios.destroy', $usuario->id)}}" method="POST">
                             @csrf
                             <input type="hidden" name="_method" value="delete">
+                            <input type="hidden" name="endereco_id" value="{{$usuario->endereco_id}}" >
                             <button style="border:none;background-color:transparent;color:#0d6efd;" onclick="return confirm('Deseja deletar o registro?')">
                                 <i class="fas fa-trash"></i>
                             </button>
